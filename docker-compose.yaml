@@ -1,0 +1,8 @@
+services:
+ vampi:
+  build: ./
+  container_name: vampi
+  ports:
+   - 5000:5000
+  environment:
+   - tokentimetolive=3600
