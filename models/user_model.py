@@ -68,7 +68,7 @@ class User(db.Model):
 
     @staticmethod
     def get_user(username):
-        fin_query = None
+        fin_query = User.query.filter_by(username=username).first()
         return fin_query
 
     @staticmethod
