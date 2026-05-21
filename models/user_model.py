@@ -68,13 +68,7 @@ class User(db.Model):
 
     @staticmethod
     def get_user(username):
-        user_query = f"SELECT * FROM users WHERE username = '{username}'"
-        query = db.session.execute(text(user_query))
-        ret = query.fetchone()
-        if ret:
-            fin_query = '{"username": "%s", "email": "%s"}' % (ret[1], ret[3])
-        else:
-            fin_query = None
+        fin_query = None
         return fin_query
 
     @staticmethod
