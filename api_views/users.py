@@ -146,7 +146,7 @@ def update_password(username):
         return Response(error_message_helper(resp), 401, mimetype="application/json")
     else:
         if request_data.get('password'):
-            user = User.query.filter_by(username=username).first()
+            user = User.query.filter_by(username=resp['sub']).first()
             if user:
                 user.password = request_data.get('password')
                 db.session.commit()
